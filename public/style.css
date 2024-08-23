@@ -1,0 +1,197 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to right, #d0a67c, #ffffff);
+    background-color: red !important;
+}
+
+/* Header Styles */
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 15px 0; /* Increase top and bottom padding for height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center nav items */
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f1f1f1;
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically if needed */
+    text-align: center; /* Center text inside the main element */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem; /* Adjust font size if needed */
+    color: #555; /* Slightly lighter color for the paragraph */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center form elements horizontally */
+    width: 100%; /* Make form take full width */
+    max-width: 600px; /* Optional: Restrict maximum width of the form */
+    margin: 0 auto; /* Center form horizontally */
+}
+
+input[type="file"] {
+    display: block;
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px; /* Optional: Restrict maximum width */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space below the input */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Make button take full width within form */
+    max-width: 400px; /* Optional: Restrict maximum width */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0; /* Increase top and bottom padding for height */
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Adjust header font size for smaller screens */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph font size for smaller screens */
+    }
+
+    input[type="file"], 
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+/* Table Styles */
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are merged */
+    margin-top: 20px;
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures rounded corners are visible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+th, td {
+    padding: 12px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Subtle border between rows */
+    position: relative; /* Allows absolute positioning for vertical lines */
+}
+
+th {
+    background-color: #007bff; /* Blue background for header */
+    color: #ffffff; /* White text color */
+    font-weight: bold; /* Bold text for header */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background for even rows */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Slightly darker gray on hover */
+}
+
+/* Vertical Lines */
+th:not(:last-child), td:not(:last-child) {
+    border-right: 1px solid #ddd; /* Vertical line between columns */
+}
+
+/* Remove the right border of the last column */
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+caption {
+    font-size: 1.5rem; /* Larger font size for the caption */
+    margin-bottom: 10px; /* Space between caption and table */
+    color: #333; /* Darker text color for contrast */
+    text-align: left; /* Align caption text to the left */
+}
+
+/* Responsive Design for Tables */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    th, td {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+}

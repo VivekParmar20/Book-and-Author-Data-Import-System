@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<main>
+<h1>Welcome to the Book and Author Data Import System</h1>
+<p>Upload your Excel file to start the data import process.</p>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xls,.xlsx" required>
+    <button type="submit">Upload</button>
+</form>
+</main>
+<%- include('partials/footer') %>

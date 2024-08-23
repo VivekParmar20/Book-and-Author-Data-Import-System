@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+<main>
+<h1>Review Uploaded Data</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ISBN Code</th>
+            <th>Author Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.forEach(row => { %>
+            <tr>
+                <td><%= row.Name %></td>
+                <td><%= row.ISBN_Code %></td>
+                <td><%= row.Author_Name %></td>
+                <td><%= row.Email %></td>
+                <td><%= row.Date_of_Birth %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<form action="/confirm" method="post">
+    <input type="hidden" name="data" value='<%= JSON.stringify(data) %>'> &nbsp;
+    <button type="submit">Confirm</button>
+</form>
+</main>
+<%- include('partials/footer') %>
