@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -8,7 +9,7 @@ const indexRoutes = require('./routes/index');
 const uploadRoutes = require('./routes/upload');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use environment variable for port
 
 // Setup view engine
 app.set('view engine', 'ejs');
@@ -21,9 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/bookAuthorDB', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+mongoose.connect(process.env.MONGO_URI, {
+    // Removed deprecated options
 });
 
 const db = mongoose.connection;
@@ -33,12 +33,12 @@ db.once('open', () => {
 });
 
 // Use routes
-app.use('/', indexRoutes);
-app.use('/', uploadRoutes);
+app.use('/', indexRoutes); // Default route
+app.use('/upload', uploadRoutes); // Specific route for upload
 
 // Handle 404 errors
-app.get("*", (req, res) => {
-    res.send("Path not Found!");
+app.use((req, res) => {
+    res.status(404).send("Path not Found!");
 });
 
 app.listen(port, () => {
