@@ -1,7 +1,12 @@
+// Load environment variables from .env file
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/bookAuthorDB', {
+// Destructure MONGO_URI from process.env
+const { MONGO_URI } = process.env;
+
+// Connect to MongoDB using MONGO_URI
+mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -11,9 +16,8 @@ mongoose.connect('mongodb://localhost:27017/bookAuthorDB', {
 });
 
 // Import models
-const Book = require('./Books');
-const Author = require('./Author');
-
+const Book = require('./models/Books');  // Ensure correct path
+const Author = require('./models/Author'); // Ensure correct path
 
 // Export models
 module.exports = {
