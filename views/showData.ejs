@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<main>
+    <h1><%= title %></h1>
+
+    <h2>Authors</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% authors.forEach(author => { %>
+                <tr>
+                    <td><%= author.name %></td>
+                    <td><%= author.email %></td>
+                    <td><%= author.dateOfBirth || 'N/A' %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Books</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ISBN Code</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% books.forEach(book => { %>
+                <tr>
+                    <td><%= book.name %></td>
+                    <td><%= book.isbnCode %></td>
+                    <td><%= book.author.name %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</main>
+
+<%- include('partials/footer') %>

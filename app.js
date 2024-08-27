@@ -171,6 +171,19 @@ app.post('/confirm', async (req, res) => {
     }
 });
 
+// Add this route to fetch and display data
+app.get('/show-data', async (req, res) => {
+    try {
+        // Fetch data from the database
+        const authors = await Author.find({});
+        const books = await Book.find({}).populate('author'); // Populate to get author details
+
+        res.render('showData', { title: 'Submitted Data - Book and Author Data Import', authors, books });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.send('An error occurred while fetching data.');
+    }
+});
 
 
 app.get("*", (req, res) => {

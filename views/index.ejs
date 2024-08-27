@@ -6,7 +6,7 @@
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file" accept=".xls,.xlsx" required>
         <button type="submit">Upload</button>
-    </form>
+    </form> &nbsp;
 
     <!-- Success message pop-up -->
     <% if (success) { %>
@@ -15,6 +15,11 @@
             <button onclick="closePopup()">Close</button>
         </div>
     <% } %>
+
+    <!-- Button to show data -->
+    <form action="/show-data" method="get">
+        <button type="submit">Show Submitted Data</button>
+    </form>
 </main>
 
 <script>
@@ -23,11 +28,11 @@
     }
 
     // Display the popup if a success message is present
-     if (success) { 
+    if (success) { 
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('success-popup').style.display = 'block';
         });
-     }
+    }
 </script>
 
 <style>
