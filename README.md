@@ -18,3 +18,8 @@ This project is a Node.js application that allows users to upload an Excel file 
 - xlsx (for reading Excel files)
 - Mongoose (for MongoDB interaction)
 - CSS (for styling)
+
+## How to run 
+
+- npm install
+- nodemon app.js
